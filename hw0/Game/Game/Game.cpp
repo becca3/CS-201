@@ -10,6 +10,8 @@ Description: Game description project for CS-201 hw0
 
 int main(int argc, char** argv)
 {
+	/**Defining a string variable using "std::string". 
+	message is the variable name. */
 	std::string message("Tomb Raider is an action-adventure based game.\n"
 		"You can roam an open map world looking for treasures and artifacts.\n"
 		"Defeating enemies such as knights, dinosaurs and wild animals (bears, tigers, panthers) is also part of the game.\n"
