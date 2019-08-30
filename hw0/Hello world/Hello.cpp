@@ -7,7 +7,7 @@ Description: Hello world program for CS-201
 
 #include <iostream>
 
-int main(int argc, char** argv)
+int main(int argc, char** argv) 
 {
 	int num = 0;
 		while (num < 5) //This while loop prints "Hello world" while the num is less than 5 - once num reaches 5 the loop ends.
