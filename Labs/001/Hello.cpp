@@ -9,5 +9,6 @@ Description: Hello world program for CS-201
 int main(int argc, char** argv)
 {
 	std::cout << "Hello World!\n" << std::endl;
+	int a = 37;
 	return 0;
 }
