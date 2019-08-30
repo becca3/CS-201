@@ -6,7 +6,7 @@ Description: Poem printing project for CS-201 hw0
 */
 
 #include <iostream>
-#include <string>
+#include <string> //Added so I can use strings in the code
 
 int main(int argc, char** argv)
 {
