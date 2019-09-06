@@ -1,3 +1,10 @@
+/**
+Program: Diamond
+Author: Rebecca Morgan
+Date: 06 September 2019
+Description: Diamond program for CS-201
+*/
+
 #include <iostream>
 
 int main(int argc, char** argv)
