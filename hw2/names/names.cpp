@@ -2,7 +2,7 @@
 Program: names.cpp
 Author: Rebecca Morgan 
 Date:
-Description:	
+Description: Function that prints 10 names 	
 */
 
 #include <iostream>
