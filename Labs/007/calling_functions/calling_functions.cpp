@@ -14,9 +14,12 @@ int main(int argc, char** argv)
 	int y = getInt();
 	int z = getInt();
 
-	putInt(x, 10);
-	putInt(y, 10);
-	putInt(z, 10);
+	putInt(x, 5);
+	std::cout << "\n";
+	putInt(y, 5);
+	std::cout << "\n";
+	putInt(z, 5);
+	std::cout << "\n";
 	return 0;
 }
 
