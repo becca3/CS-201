@@ -17,5 +17,6 @@ int main(int argc, char** argv)
 	putInt(x, 10);
 	putInt(y, 10);
 	putInt(z, 10);
+	return 0;
 }
 
