@@ -123,7 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="intio.cpp" />
     <ClCompile Include="lab8.cpp" />
+    <ClCompile Include="lab8_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="intio.hpp" />
+    <ClInclude Include="lab8.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
