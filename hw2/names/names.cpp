@@ -1,7 +1,7 @@
 /**
 Program: names.cpp
 Author: Rebecca Morgan 
-Date:
+Date: 20 September 2019
 Description: Function that prints 10 names 	
 */
 
@@ -12,7 +12,6 @@ Description: Function that prints 10 names
 
 void InputNames(std::vector<std::string> & names)
 {
-	//std::vector<std::string> names;
 	for (int i = 0; i < 10; i++)
 	{
 		std::string name;
