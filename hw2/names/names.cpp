@@ -22,12 +22,15 @@ void InputNames(std::vector<std::string> & names)
 	}
 }
 
-bool DoesNameExist(const std::string& nameToFind, const std::vector<std::string>& names)
+bool DoesNameExist(const std::string & nameToFind, const std::vector<std::string> & names)
 {
-	for (int x = 0; x <InputNames.size(); x++)
+	for (int x = 0; x <names.size(); x++)
 	{
-		std::string mine;
-		//std::vector<std::string>::iterator it = std::find(names.begin(), names.end(), 10);
+		bool found = true;
+		if (x = found)	
+		{
+			break;
+		}
 	}
 }
 
@@ -35,7 +38,9 @@ int main(int argc, char** argv)
 {
 	std::vector<std::string> name;
 	InputNames(name);
-	const std::string mine, const std::vector<std::string>& names;
-	DoesNameExist(mine, name);
+
+	std::string names, std::vector<std::string> name;
+	DoesNameExist(names, name);
+
 	return 0;
 }

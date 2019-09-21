@@ -9,12 +9,14 @@ Description: Calculating numbers of grains of rice program for CS-201
 
 int main(int argc, char** argv)
 {
+	//Set variables for grains and squares 
 	int grains = 1;
 	int squares = 2;
 	int thousand = 0;
 	int million = 0;
 	int billion = 0;
 
+	//First square grains 
 	std::cout << "Square = " << "1" << "\n";
 	std::cout << "Grains = " << "1" << "\n";
 	std::cout << "\n";
@@ -26,15 +28,15 @@ int main(int argc, char** argv)
 		std::cout << "Grains = " << grains << "\n";
 		std::cout << "\n";
 
-	if (grains == 1024)
+	if (grains == 1024) //Assign a variable to 1000 grains 
 	{
 		thousand = squares;
 	}
-	if (grains == 1048576)
+	if (grains == 1048576) //Assign a variable to 1,000,000 grains
 	{
 		million = squares;
 	}
-	if (grains == 1073741824)
+	if (grains == 1073741824) //Assign a variable to 1,000,000,000 grains 
 	{
 		billion = squares;
 	}
