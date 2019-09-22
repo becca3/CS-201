@@ -1,14 +1,36 @@
 /**
 Program: names.cpp
 Author: Rebecca Morgan 
-Date: 20 September 2019
-Description: Function that prints 10 names 	
+Date: 21 September 2019
+Description: Functions and prototypes for CS-201 	
 */
 
 #include <iostream>
 #include <vector>
 #include <string>
 #include <algorithm>
+
+void InputNames(std::vector<std::string>& names);
+bool DoesNameExist(const std::string& nameToFind, const std::vector<std::string>& names);
+void PrintNames(const std::vector<std::string> & names);
+
+int main(int argc, char** argv)
+{
+	std::vector<std::string> names;
+	InputNames(names);
+	std::cout << "\n";
+
+	std::string name;
+	std::cout << "Please enter a name to find: ";
+	std::cin >> name;
+	std::cout << DoesNameExist(name, names);
+	std::cout << "\n";
+
+	PrintNames(names);
+	std::cout << "\n";
+
+	return 0;
+}
 
 void InputNames(std::vector<std::string> & names)
 {
@@ -21,25 +43,23 @@ void InputNames(std::vector<std::string> & names)
 	}
 }
 
-bool DoesNameExist(const std::string & nameToFind, const std::vector<std::string> & names)
+bool DoesNameExist(const std::string& nameToFind, const std::vector<std::string>& names)
 {
-	for (int x = 0; x <names.size(); x++)
+	for (int i = 0; i < names.size(); i++)
 	{
-		bool found = true;
-		if (x = found)	
+		if (nameToFind == names[i])
 		{
-			break;
+			return true;
+			std::cout << "\n";
 		}
 	}
+	return false;
 }
 
-int main(int argc, char** argv)
+void PrintNames(const std::vector<std::string>& names)
 {
-	std::vector<std::string> name;
-	InputNames(name);
-
-	std::string names, std::vector<std::string> name;
-	DoesNameExist(names, name);
-
-	return 0;
+	for (int i = 0; i < names.size(); i++)
+	{
+		std::cout << names[i] << "\n";
+	}
 }
