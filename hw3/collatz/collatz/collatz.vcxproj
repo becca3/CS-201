@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{1D935D6C-C47D-43FF-9A87-6A228F3F0B5B}</ProjectGuid>
-    <RootNamespace>charinstring</RootNamespace>
+    <ProjectGuid>{D0A5D576-9160-40FD-ACB1-5B27FD1F4CE2}</ProjectGuid>
+    <RootNamespace>collatz</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="char_in_string.cpp" />
+    <ClCompile Include="collatz.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

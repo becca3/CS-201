@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="char_in_string.cpp">
+    <ClCompile Include="kelvin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
