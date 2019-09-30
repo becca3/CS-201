@@ -22,6 +22,7 @@ int main() {
 	// prompt
 	std::cout << "Enter a series of strings (type \"end\" to finish): "
 			<< std::endl;
+
 	// TODO create userInput.cpp with this function
 	getUserStrings(words);
 

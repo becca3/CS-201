@@ -5,5 +5,11 @@
 
 void getUserStrings(std::vector<std::string>& words)
 {
-
+	std::string text;
+	while (text != "end")
+	{
+		std::cout << "Enter words: ";
+		std::cin >> text;
+		words.push_back(text);
+	}
 }
