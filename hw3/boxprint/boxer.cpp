@@ -1,3 +1,9 @@
+/**
+Program: boxprint.cpp
+Author: Rebecca Morgan
+Date: 28 September 2019
+Description: Program that prints a box of asterisks around a word for CS-201
+*/
 #include <iostream>
 #include <string>
 #include "boxer.hpp" 
