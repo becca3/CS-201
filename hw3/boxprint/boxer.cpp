@@ -1,20 +1,47 @@
 #include <iostream>
 #include <string>
-#include "boxer.hpp"
-
-/*int rows = 0; //Printing box L -> R 
-int col = 0; //Printing box Up -> Down
-int num; //Stores number from user for size of box 
+#include "boxer.hpp" 
 
 void box(std::string word, int num)
 {
-	std::cout << "Enter a word: ";
-	std::cin >> word;
-	std::cout << "Enter the size of square: ";
-	std::cin >> num;
-	
-	if (rows <= num)
+	std::string beginend(num, '*'); //Prints the ends of the box
+
+	for (int i = 0; i < num; i++) //Loop to print the first bit of the box 
 	{
-		std::cout << "*" << "\n";
+		std::cout << beginend;
+
+		for (int j = 0; j < word.length() + 2; j++) //Prints the top line before the line containing the word
+		{
+			std::cout << "*";
+		}
+		std::cout << beginend << "\n";
 	}
-}*/
+
+	std::cout << beginend; //Print the end of the box 
+
+	for (int i = 0; i < word.length() + 2; i++) //Prints the row below the word 
+	{
+		std::cout << " "; 
+	}
+	std::cout << beginend << "\n";
+	std::cout << beginend;
+	std::cout << " " << word << " " << beginend << "\n"; //Prints the word with spaces  
+	std::cout << beginend; 
+	for (int i = 0; i < word.length() + 2; i++)
+	{
+		std::cout << " "; //Prints spaces beside the word 
+	}
+	std::cout << beginend << "\n";
+
+	for (int i = 0; i < num; i++) //Printning bottom of box 
+	{
+		std::cout << beginend;
+
+		for (int j = 0; j < word.length() + 2; j++) //Printing last bit of box 
+		{
+			std::cout << "*";
+		}
+		std::cout << beginend << "\n";
+	}
+
+}
