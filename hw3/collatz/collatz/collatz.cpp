@@ -1,3 +1,10 @@
+/**
+Program: collatz.cpp
+Author: Rebecca Morgan
+Date: 28 September 2019
+Description: Created collatz program for CS-201
+*/
+
 #include <iostream>
 
 int main(int argc, char** argv)
