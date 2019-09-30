@@ -33,7 +33,7 @@ void box(std::string word, int num)
 	}
 	std::cout << beginend << "\n";
 
-	for (int i = 0; i < num; i++) //Printning bottom of box 
+	for (int i = 0; i < num; i++) //Printing bottom of box 
 	{
 		std::cout << beginend;
 
