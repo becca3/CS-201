@@ -13,3 +13,5 @@ void getUserStrings(std::vector<std::string>& words)
 		words.push_back(text);
 	}
 }
+
+void getUserStrings1(std::vector<std::string>& words)
