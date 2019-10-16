@@ -9,19 +9,35 @@ Description: Identifying tokens for CS-201
 #include<string>
 #include<vector>
 #include<sstream>
+#include<algorithm>
+#include<iterator>
 #include "tokenizer.hpp"
 
 bool ReadLine(std::string& str)
 {
 	std::string token;
-	for (int i = 0; i << token.size(); i++)
+	for (int i = 1; i <= token.size(); i++)
 	{
-		std::cout << token[i];
+		if (std::cout << token[i])
+		{
+			return true;
+		}
+		else
+		{
+			return false;
+		}
 	}
-	
-	/*std::string token;
-	std::cout << "Enter a sentence: ";
-	std::getline(std::cin, token);
-	std::cout << "Your sentence is: " << token;*/
+	return 0;
+}
+
+unsigned StringToTokensWS(std::vector<std::string>& tokens)
+{
+	std::string sentence;
+	for (int i = 0; i <= tokens.size(); i++)
+	{
+		std::cout << tokens[i];
+		std::cout << "Number of tokens in vector: " << tokens[i];
+		return tokens.size();
+	}
 	return 0;
 }
