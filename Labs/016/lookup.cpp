@@ -29,8 +29,24 @@ bool sequentialSearch(vector<int> keys,
                   int thekey,
                   string & thevalue)
 {
-    return false;  // DUMMY
-    // TODO: Write this!
+	int search(int keys[], int thekey; int x);
+	{
+		int i;
+		for (i = 0; i <= thekey; i++)
+		{
+			if (keys[i] == x)	
+			{
+				return i;
+
+			}
+			else
+			{
+				return false;
+			}
+		}
+	}
+	//return false;  // DUMMY
+	// TODO: Write this!
 }
 
 
@@ -38,6 +54,7 @@ bool sequentialSearch(vector<int> keys,
 // Create a dataset, and do searches in it.
 int main()
 {
+	int x = 10;
     // Make associative (KEY-VALUE) dataset
     vector<int> keys {
         21,
