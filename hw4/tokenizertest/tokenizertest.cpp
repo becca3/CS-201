@@ -9,7 +9,7 @@ Description: Identifying tokens for CS-201
 #include<string>
 #include<vector>
 #include<sstream>
-#include <algorithm>
+#include<algorithm>
 #include<iterator>
 #include "tokenizer.hpp"
 
@@ -28,7 +28,8 @@ int main(int argc, char** argv)
 	ReadLine(token);
 	std::cout << "\n";
 
-	std::vector<std::string> tokens;
+	std::string input; std::vector<std::string> tokens;
+	
 	std::string sentence;
 	std::cout << "Please help: ";
 	std::getline(std::cin, sentence);

@@ -30,14 +30,21 @@ bool ReadLine(std::string& str)
 	return 0;
 }
 
-unsigned StringToTokensWS(std::vector<std::string>& tokens)
+unsigned StringToTokensWS(const std::string & input, std::vector<std::string>& tokens)
 {
 	std::string sentence;
-	for (int i = 0; i <= tokens.size(); i++)
+	std::stringstream iss(sentence);
+	int count = 0;
 	{
-		std::cout << tokens[i];
-		std::cout << "Number of tokens in vector: " << tokens[i];
-		return tokens.size();
+		for (int i = 0; i <= tokens.size(); i++)
+		{
+			std::cout << tokens[i];
+			count++;
+			std::cout << "\n";
+			std::cout << "Number of tokens in vector: " << tokens.size() << "\n";
+			std::cout << "This is the num in count: " << count << "\n";
+			return tokens.size();
+		}
 	}
 	return 0;
 }
