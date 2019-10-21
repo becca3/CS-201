@@ -1,54 +1,18 @@
-/*#include<iostream>
-#include<vector>
-#include<string>
-
-void game();
-
-int main(int argc, char** argv)
-{
-	std::string guess;
-	std::cout << "Guess the number! Enter 4 digits: ";
-	std::cin >> guess;
-
-	void game();
-
-	return 0;
-}
-
-void game()
-{
-	int guess = 0;
-	std::vector<int> nums; //The answer 
-	std::vector<int> player; //Players guess
-	int bulls = 0;
-	int cows = 0;
-	int index = 0;
-
-	nums.push_back(2);
-	nums.push_back(3);
-	nums.push_back(7);
-	nums.push_back(9);
-
-	for (int i = 0; i < nums.size(); i++)
-	{
-		if (nums[i] == guess)
-		{
-			std::cout << i;
-		}
-		else
-		{
-			std::cout << "Wrong";
-		}
-	}
-}*/
+/**
+Program: bulls-and-cows.cpp
+Author: Rebecca Morgan
+Date: 20th October 2019
+Description: Bulls and cows game for CS-201
+*/
 
 #include <iostream>
-#include <time.h>
 #include <string>
 #include <sstream>
 #include <vector>
 
-int main() {
+int main() 
+{
+	//List of all variables 
 	int bull;
 	int cow;
 	int find_count;
@@ -63,6 +27,7 @@ int main() {
 	char again;
 	bool win;
 
+	//Begin game
 	std::cout << "Welcome to the Bulls and Cows game!" << std::endl;
 	while (run_game == true) {
 		bull = 0;
@@ -70,7 +35,7 @@ int main() {
 		find_count = 0;
 		calculate_cows = 0;
 
-		//random number generation begins
+		//Random number generation begins
 		value1 = rand() % 10;
 		value2 = rand() % 10;
 		value3 = rand() % 10;
@@ -81,9 +46,8 @@ int main() {
 		secret_number = ss.str();
 
 		win = false;
-		std::cout << secret_number;
 
-
+		//Looking for number and place of number (index)
 		while (win == false) {
 			std::cout << "Make a guess: (XXXX)" << std::endl;
 			std::cin >> guess;
@@ -116,10 +80,12 @@ int main() {
 			}
 		}
 
+		//Asks user if they want to play again once they guess the correct number 
 		std::cout << "Play again? (y/n)" << std::endl;
 		std::cin >> again;
 		run_game = (again == 'y') ? true : false;
 	}
-	std::cout << "Thanks for playing! :)" << std::endl;
+	//User says no then the game ends 
+	std::cout << "Thanks for playing!" << std::endl;
 	return 0;
 }
