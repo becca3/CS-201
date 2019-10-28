@@ -5,13 +5,13 @@
 
 void string(std::string stringValue)
 {
-	std::string strVal = "3, 5, 8, 9";
-	std::istringstream val (strVal); 
-	
-	for (int x = 0; x < strVal.size(); x++);
-	{
-		int str; 
-		val >> str;
-		std::cout << str*2 << "\n";
-	}
+	float count = 0;
+
+	std::istringstream val (stringValue);
+	val >> count;
+
+	std::cout << count << "\n";
+
+	float count_2 = count * count;
+	std::cout << count_2;
 }

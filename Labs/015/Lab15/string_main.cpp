@@ -3,8 +3,11 @@
 #include <string>
 #include "string.hpp"
 
+
 int main(int argc, char** argv)
 {
-	std::cout << "Enter a number: ";
-	void string(hello);
+	std::string stringValue = "4.4 hello";
+	std::istringstream val(stringValue);
+
+	string(stringValue);
 }

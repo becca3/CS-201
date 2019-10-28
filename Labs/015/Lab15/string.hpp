@@ -5,7 +5,7 @@
 #include <sstream>
 #include <string>
 
-void string();
+void string(std::string stringValue);
 
 #endif 
 
