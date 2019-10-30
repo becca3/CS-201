@@ -7,11 +7,14 @@
 
 int main()
 {
-	Fl_Window window(600, 400, "Window title");
+	Fl_Window window(600, 600, "Window title");
 	Fl_Box box(-10, -75, 200, 200, "Instructions: \n");
-	Fl_Box box2(90, -50, 200, 200, "Type a sentence. The program will print the results.");
-	Fl_Input *inp = new Fl_Input(30, 75, 200, 60);
-	inp -> value("Enter your sentence: ");
+	Fl_Box box2(30, -50, 200, 200, "Type a sentence and a number. \n");
+	Fl_Box box3(172, -30, 200, 200, "The program will print your sentence with the number of characters you input. \n");
+	Fl_Input *string = new Fl_Input(30, 90, 200, 60);
+	string -> value("Enter your sentence: ");
+	Fl_Input *number = new Fl_Input(30, 160, 200, 60);
+	number -> value("Enter a number: ");
 
 	box.labelsize(20);
 	box.labelfont(FL_BOLD);
