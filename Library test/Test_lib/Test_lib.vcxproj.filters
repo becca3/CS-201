@@ -15,8 +15,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Test_lib.cpp">
+    <ClCompile Include="..\..\Labs\021\truncstruct_main\truncstruct.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="fltk-trunc.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\Labs\021\truncstruct_main\truncstruct.hpp">
+      <Filter>Source Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

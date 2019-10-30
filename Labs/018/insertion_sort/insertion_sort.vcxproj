@@ -18,13 +18,10 @@
       <Platform>x64</Platform>
     </ProjectConfiguration>
   </ItemGroup>
-  <ItemGroup>
-    <ClCompile Include="lookup(1).cpp" />
-  </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{94CA6F86-E64F-4F9C-9909-4F5A8A597AB5}</ProjectGuid>
-    <RootNamespace>My016</RootNamespace>
+    <ProjectGuid>{F3F996D9-D1FB-4F97-9C00-C21C17DF2E97}</ProjectGuid>
+    <RootNamespace>insertionsort</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -125,6 +122,13 @@
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
   </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClCompile Include="..\insertion_sort.cpp" />
+    <ClCompile Include="..\insertion_sort_main.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\insertion_sort.hpp" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
