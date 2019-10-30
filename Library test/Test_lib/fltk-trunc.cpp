@@ -3,6 +3,7 @@
 #include<FL/Fl_Window.h>
 #include "truncstruct.hpp"
 
+
 int main()
 {
 	Fl_Window window(200, 200, "Window title");

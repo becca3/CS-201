@@ -10,8 +10,12 @@
 // John Quan
 // For CS 201 Fall 2019
 
+#pragma comment (lib, "fltk.lib")
+#pragma comment (lib, "comctl32.lib")
+
 #ifndef FILE_TRUNCSTRUCT_HPP_INCLUDED
 #define FILE_TRUNCSTRUCT_HPP_INCLUDED
+
 
 #include <string>
 
