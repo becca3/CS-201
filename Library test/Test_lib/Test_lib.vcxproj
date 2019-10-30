@@ -145,11 +145,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\Labs\021\truncstruct_main\truncstruct.cpp" />
     <ClCompile Include="fltk-trunc.cpp" />
+    <ClCompile Include="truncstruct.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\Labs\021\truncstruct_main\truncstruct.hpp" />
+    <ClInclude Include="truncstruct.hpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
