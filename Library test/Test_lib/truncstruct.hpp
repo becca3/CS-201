@@ -16,7 +16,6 @@
 #ifndef FILE_TRUNCSTRUCT_HPP_INCLUDED
 #define FILE_TRUNCSTRUCT_HPP_INCLUDED
 
-
 #include <string>
 
 /**
