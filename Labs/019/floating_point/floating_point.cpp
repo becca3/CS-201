@@ -1,16 +1,8 @@
-#define _USE_MATH_DEFINES
-#include <cmath>
+#ifndef FLOATING_POINT_HPP_
+#define FLOATING_POINT_HPP_
 
-#include <vector>
+#include<vector>
 
-std::vector<double> degreesToRadians(int degrees) 
-{
+std::vector<double> degreesToRadians(int degree);
 
-	std::vector<double> radians;
-
-	for (int degree = 0; degree <= degrees; ++degree)
-	{
-
-	}
-	return radians;
-}
+#endif 

@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{C078ACF6-9970-4E1C-8BE3-07D1613BB1AE}</ProjectGuid>
-    <RootNamespace>floatingpoint</RootNamespace>
+    <ProjectGuid>{92A4102A-1DEE-4B09-BF47-F9F41F24920D}</ProjectGuid>
+    <RootNamespace>STLalgorithm</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,11 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="floating_point.cpp" />
-    <ClCompile Include="floating_point_main.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="floating_point.hpp" />
+    <ClCompile Include="STL_algorithm.cpp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

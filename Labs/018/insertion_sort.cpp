@@ -11,7 +11,27 @@
 
 void insertionSort(std::vector<int> & data)
 {
-	// TODO Write the code for insertionSort
+	{
+		int i, key, j;
+
+		for (i = 1; i < data.size(); i++)
+		{
+			key = data[i];
+			j = i - 1;
+
+			/* Move elements of arr[0..i-1], that are
+			greater than key, to one position ahead
+			of their current position */
+			while (j >= 0 && data[j] > key)
+			{
+				data[j + 1] = data[j];
+				j = j - 1;
+			}
+			data[j + 1] = key;
+		}
+	}
+}
+// TODO Write the code for insertionSort
 
 //	1. For each element, with the second element as the current element
 //	2. If the previous element is bigger than the current element
@@ -28,7 +48,6 @@ void insertionSort(std::vector<int> & data)
 	// We found where temp goes.
 
 //	8. Move it into the element at j
-}
 
 bool isEqual(const std::vector<int> & v1, const std::vector<int> & v2) {
 	// compare lengths

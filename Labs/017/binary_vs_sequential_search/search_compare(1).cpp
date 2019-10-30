@@ -33,23 +33,28 @@ using std::istringstream;
 // returns false. If it is found, sets thevalue to the associated value
 // and returns true.
 bool binarySearch(const vector<int> & keys, const vector<int> & values,
-		int thekey, int & thevalue) {
+		int thekey2, int & thevalue2) 
+{
 
 	int first = 0;  // Index of first item in range
 	int last = int(keys.size());
 	// 1 + index of last item in range
-	while (true) {
+	while (true) 
+	{
 		// Compute size of range
 		int size = last - first;
 
 		// Special case: size 0
-		if (size == 0) {
+		if (size == 0)
+		{
 			return false;
 		}
 		// Special case: size 1
-		if (size == 1) {
-			if (keys[first] == thekey) {
-				thevalue = keys[first];
+		if (size == 1) 
+		{
+			if (keys[first] == thekey2)
+			{
+				thevalue2 = keys[first];
 				return true;
 			}
 			return false;
@@ -57,9 +62,12 @@ bool binarySearch(const vector<int> & keys, const vector<int> & values,
 
 		// General case - split range in half
 		int middle = first + size / 2;
-		if (thekey < keys[middle]) {
+		if (thekey2 < keys[middle]) 
+		{
 			last = middle;
-		} else {
+		}
+		else 
+		{
 			first = middle;
 		}
 	}
@@ -72,9 +80,12 @@ bool binarySearch(const vector<int> & keys, const vector<int> & values,
 // returns false. If it is found, sets thevalue to the associated value
 // and returns true.
 bool sequentialSearch(const vector<int> & keys, const vector<int> & values,
-		int thekey, int & thevalue) {
-	for (int i = 0; i < int(keys.size()); ++i) {
-		if (keys[i] == thekey) {
+		int thekey, int & thevalue) 
+{
+	for (int i = 0; i < int(keys.size()); ++i)
+	{
+		if (keys[i] == thekey)
+		{
 			thevalue = values[i];
 			return true;
 		}
@@ -86,8 +97,10 @@ bool sequentialSearch(const vector<int> & keys, const vector<int> & values,
 // Read an integer from a line of text read from cin, with error
 // checking. Initial prompt shold be printed before calling this
 // function. Returns the integer typed.
-int readInt() {
-	while (true) {
+int readInt()
+{
+	while (true) 
+	{
 		// Input a line
 		string line;
 		getline(cin, line);
@@ -98,7 +111,8 @@ int readInt() {
 		in >> num;
 
 		// Error check
-		if (!in) {
+		if (!in) 
+		{
 			cout << "Try again. Please type an integer: ";
 			continue;
 		}
@@ -108,8 +122,10 @@ int readInt() {
 
 // Main program
 // Create a dataset, and do searches in it.
-int main() {
-	while (true) {
+int main() 
+{
+	while (true) 
+	{
 
 		// Get size of dataset
 		cout << "Dataset size (0 to end): ";
@@ -121,7 +137,39 @@ int main() {
 		// Make the parallel vectors associative dataset
 		cout << "Creating dataset ..." << endl;
 		// TODO CREATE DATASET HERE!!! *****************************
+		vector<int> keys
+		{
+				1,
+				2,
+				3,
+				4,
+				5,
+				6,
+				7,
+				8,
+				9,
+				10
+		};
+		vector<int> values
+		{
+			100,
+			200,
+			300,
+			400,
+			500,
+			600,
+			700,
+			800,
+			900,
+			1000
+		};
 
+		std::cout << "\n";
+		for (int i = 0; i < keys.size(); i++)
+		{
+			std::cout << values[i] << "\n";
+		}
+		std::cout << "\n";
 
 		// *********************************************************
 		cout << "Dataset created" << endl;
@@ -138,6 +186,20 @@ int main() {
 		// Do searches
 		// TODO BINARY SEARCH HERE!!! ******************************
 
+		int thevalue2;
+		int thekey2 = 0;
+
+		bool found2 = binarySearch(keys, values, thekey2, thevalue2);
+		{
+			if (found2)
+			{
+				cout << "Key found: " << thevalue2 << endl;
+			}
+			else
+			{
+				cout << "Key not found." << endl;
+			}
+		}
 
 		// *********************************************************
 		timer = clock() - timer;
@@ -149,7 +211,19 @@ int main() {
 		timer = clock();
 		// TODO SEQUENTIAL SEARCH HERE!!! **************************
 
+		int thevalue;
+		int thekey = 0;
 
+		bool found = sequentialSearch(keys, values, thekey, thevalue);
+		if (found)
+		{
+			cout << "Key found: " << thevalue << endl;
+		}
+		else
+		{
+			cout << "Key not found." << endl;
+		}
+	
 		// *********************************************************
 		timer = clock() - timer;
 		cout << "Sequential Search DONE" << endl;

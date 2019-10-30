@@ -10,7 +10,7 @@ int main() {
 	// compile.  Make it compile by using std::size_t
 	// You can comment this for loop out after that.
 	std::vector<int> v{ 1, 2, 3, 4, 5 };
-	for (int i = 2; i < v.size(); ++i) {
+	for (size_t i = 2; i < v.size(); ++i) {
 		++v[i];
 		std::cout << v[i] << std::endl;
 	}
