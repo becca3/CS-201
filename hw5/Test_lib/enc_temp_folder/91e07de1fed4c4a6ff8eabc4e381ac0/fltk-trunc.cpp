@@ -1,10 +1,3 @@
-/**
-Program: fltk-trunc.cpp
-Author: Rebecca Morgan
-Date: 01 November 2019
-Description: fltk Trauncate program for CS-201
-*/
-
 #include<FL/Fl.h>
 #include<FL/Fl_Box.h>
 #include<FL/Fl_Window.h>
