@@ -5,13 +5,118 @@ Date: 20th October 2019
 Description: Bulls and cows game for CS-201
 */
 
+#include<FL/Fl.h>
+#include<FL/Fl_Box.h>
+#include<FL/Fl_Window.h>
+#include<FL/Fl_Input.h>
+#include<FL/Fl_Output.h>
+#include<FL/Fl_Button.h>
+#include<FL/Fl_Return_Button.h>
+#include "bulls-and-cows.h"
+
 #include <iostream>
 #include <string>
 #include <sstream>
 #include <vector>
 
-int main() 
+
+struct Screen
 {
+	std::string input;
+};
+
+
+struct View
+{
+	Fl_Input* input = nullptr;
+	Fl_Output* output = nullptr;
+};
+
+Screen screen;
+View view;
+
+void InputChanged(Fl_Widget* w, void* userdata);
+void buttonPressed(Fl_Widget* w, void* data);
+void Quit(Fl_Widget* w, void* userdata);
+Fl_Window* CreateWindow();
+
+void InputChanged(Fl_Widget* w, void* userdata)
+{
+	if (!view.input) return;
+	screen.input = view.input->value();
+}
+
+
+void buttonPressed(Fl_Widget* w, void* data)
+{
+	if (!view.output)
+	{
+		std::cout << "NULL" << std::endl;
+		return;
+	}
+	else
+	{
+		//view.output->value(trunc(foo).str.c_str());
+	}
+
+}
+
+
+void Quit(Fl_Widget* w, void* userdata)
+{
+	if (!userdata) return;
+
+	Fl_Window* window = (Fl_Window*)userdata;
+
+	window->hide();
+}
+
+
+Fl_Window* CreateWindow()
+{
+	Fl_Window* window = new Fl_Window(550, 450, "Bulls and cows program");
+	Fl_Box* instructions = new Fl_Box(-10, -75, 200, 200, "Instructions: \n");
+	instructions->labelsize(20);
+	instructions->labelfont(FL_BOLD);
+
+	Fl_Box* text = new Fl_Box(7, -50, 200, 200, "Input a number(4 digits): \n");
+
+	Fl_Box* words = new Fl_Box(30, 0, 200, 200, "Guess a number! \n");
+
+	const int x = 100;
+	int y = 120;
+	const int w = 100;
+	const int h = 25;
+	const int Spacing = 10;
+
+	view.input = new Fl_Input(x, y, 2 * w, h, "Input:");
+	y += h + Spacing;
+	view.output = new Fl_Output(x, y, 2 * w, h, "Output:");
+	y += h + Spacing;
+
+	Fl_Return_Button* Return = new Fl_Return_Button(x, y, w, h, "Guess!");
+	y += h + Spacing;
+	Fl_Button* quitBtn = new Fl_Button(x, 225, w, h, "Quit");
+
+	// Callbacks
+	view.input->callback(InputChanged, nullptr);
+	Return->callback(buttonPressed, nullptr);
+	quitBtn->callback(Quit, (void*)window);
+
+
+	window->end();
+	return window;
+}
+
+
+int main(int argc, char** argv) 
+{
+
+	Fl_Window* window = CreateWindow();
+	window->show(argc, argv);
+	return Fl::run();
+
+
 	//List of all variables 
 	int bull;
 	int cow;

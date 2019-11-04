@@ -125,6 +125,9 @@
   <ItemGroup>
     <ClCompile Include="bulls-and-cows.cpp" />
   </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="bulls-and-cows.h" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>
