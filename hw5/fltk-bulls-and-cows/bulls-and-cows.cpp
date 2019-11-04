@@ -1,8 +1,8 @@
 /**
-Program: bulls-and-cows.cpp
+Program: fltk-bulls-and-cows.cpp
 Author: Rebecca Morgan
-Date: 20th October 2019
-Description: Bulls and cows game for CS-201
+Date: 01 November 2019
+Description: fltk bulls and cows game for CS-201
 */
 
 #include<FL/Fl.h>
