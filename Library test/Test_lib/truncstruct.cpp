@@ -29,7 +29,7 @@ StringInfo trunc(const StringInfo & stringInfo) {
 	// Truncate string & get its new length
 	s = s.substr(0, maxlen);
 	auto len = (s.size());
-
+		
 	// Convert string to upper-case
 	for (std::size_t i = 0; i < len; ++i) {
 		s[i] = char(toupper(s[i]));
