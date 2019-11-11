@@ -14,18 +14,24 @@ Description: Identifying tokens for CS-201
 #include "tokenizer.hpp"
 
 
-bool ReadLine(std::string& str);
-unsigned StringToTokensWS(std::vector<std::string>& tokens);
-
 int main(int argc, char** argv)
 {
-	std::string token;
-	std::cout << "Enter a sentence: ";
-	std::getline(std::cin, token);
-	std::cout << "Your sentence is: " << token;
-	std::cout << "\n";
+	std::string line;
+	while (true)
+	{
+		std::string line;
+		std::cout << "Enter a sentence: ";
+		std::getline(std::cin, line);
+		std::cout << "Your sentence is: " << line;
+		std::cout << "\n";
 
-	ReadLine(token);
+		if (line == "End" || line == "end" || line == "END")
+		{
+			break;
+		}
+	}
+
+	ReadLine(line);
 	std::cout << "\n";
 
 	std::string input; std::vector<std::string> tokens;
@@ -39,7 +45,7 @@ int main(int argc, char** argv)
 		std::istream_iterator<std::string>(),
 		std::ostream_iterator<std::string>(std::cout, "\n"));
 
-	StringToTokensWS(tokens);
+	StringToTokensWS(line, tokens);
 	std::cout << "\n";
 
 	//bool ReadLine(std::string & str);

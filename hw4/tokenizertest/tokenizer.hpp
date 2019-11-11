@@ -6,4 +6,5 @@ Description: Identifying tokens for CS-201
 */
 
 bool ReadLine(std::string& str);
-unsigned StringToTokensWS(std::vector<std::string>& tokens);
+
+unsigned StringToTokensWS(const std::string& input, std::vector<std::string>& tokens);
