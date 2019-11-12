@@ -1,49 +1,45 @@
-/**
+/*
 Program: tokenizer.cpp
 Author: Rebecca Morgan
 Date: 13 October 2019
 Description: Identifying tokens for CS-201
 */
 
-#include<iostream>
-#include<string>
-#include<vector>
-#include<sstream>
-#include<algorithm>
-#include<iterator>
 #include "tokenizer.hpp"
 
-bool ReadLine(std::string& str)
+bool ReadLine(std::string & str)
 {
-	std::string token;
-	for (int i = 1; i <= token.size(); i++)
+	std::getline(std::cin, str);
+
+	if (str != "")
 	{
-		if (std::cout << token[i])
-		{
-			return true;
-		}
-		else
-		{
-			return false;
-		}
+		//std::cout << "String not empty!" << "\n";
+		return true;
 	}
-	return 0;
+	else
+	{
+		//std::cout << "String empty!" << "\n";
+		return false;
+	}
 }
 
-unsigned StringToTokensWS(const std::string & input, std::vector<std::string>& tokens)
+unsigned StringToTokensWS(const std::string& input, std::vector<std::string>& tokens)
 {
-	std::string sentence;
-	std::stringstream iss(sentence);
-	int count = 0;
+	std::string line;
+	
+	while (ReadLine(line))
 	{
-		for (int i = 0; i <= tokens.size(); i++)
+		std::istringstream instream(line);
+		std::string intermediate;
+
+		while (std::getline(instream, intermediate, ' '))
 		{
-			std::cout << tokens[i];
-			count++;
-			std::cout << "\n";
-			std::cout << "Number of tokens in vector: " << tokens.size() << "\n";
-			std::cout << "This is the num in count: " << count << "\n";
-			return tokens.size();
+			tokens.push_back(intermediate);
+		}
+		for (int i = 0; i < tokens.size(); i++)
+		{
+			std::cout << tokens[i] << "\n";
+			std::cout << tokens.size(); 
 		}
 	}
 	return 0;
