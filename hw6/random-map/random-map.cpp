@@ -4,6 +4,7 @@
 #include <map>
 #include <random>
 #include <cmath>
+#include<ctime>
 #include<stdlib.h>
 
 int RandomBetweenU(int first, int last);
@@ -36,14 +37,11 @@ int RandomBetweenN(int first, int last)
 
 int RandomBetween(int first, int last)
 {
-	int x = last;
-	int i = first;
-
-	for (i; x; i++)
-	{
-		int random = std::rand();
-	}
-	return 0; 
+	srand(time(NULL));
+	int random = (std::rand() % last) + 1;
+	std::cout << "Number is: " << random << "\n";
+	return random;
+	std::cout << "\n";
 }
 
 int main()
@@ -56,8 +54,9 @@ int main()
 	std::cout << "Enter an upper bound number: " << "\n";
 	std::cin >> last;
 
-	RandomBetweenU(first, last);
-	RandomBetweenN(first, last);
+	//RandomBetweenU(first, last);
+	//RandomBetweenN(first, last);
+	RandomBetween(first, last);
 
 	//Seed with a real random value, if available
 	std::random_device r;
