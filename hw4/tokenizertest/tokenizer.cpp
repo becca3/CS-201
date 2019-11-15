@@ -7,16 +7,16 @@ Description: Identifying tokens for CS-201
 
 #include "tokenizer.hpp"
 
-bool ReadLine(std::string & str)
+bool ReadLine(std::string & str) 
 {
 	std::getline(std::cin, str);
 
-	if (str != "")
+	if (str != "") //Return true if the string entered was not empty 
 	{
 		//std::cout << "String not empty!" << "\n";
 		return true;
 	}
-	else
+	else //Return false if the string entered was empty 
 	{
 		//std::cout << "String empty!" << "\n";
 		return false;

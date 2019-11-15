@@ -27,8 +27,7 @@ int main(int argc, char** argv)
 		std::getline(std::cin, line);
 		std::cout << "Your sentence is: " << line << "\n";
 
-
-		if (line == "end" || line == "end" || line == "end")
+		if (line == "End" || line == "end" || line == "END")
 		{
 			std::cout << "Size of tokens = " << tokens.size() << "\n";
 			return tokens.size();
@@ -63,8 +62,6 @@ int main(int argc, char** argv)
 	//StringToTokensWS(line, tokens);
 	//std::cout << "\n";
 
-	//bool ReadLine(std::string & str);
-	////unsigned StringToTokensWS(std::vector<std::string> & tokens);
 	//return 0;
 	//
 }
