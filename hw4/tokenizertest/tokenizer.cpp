@@ -27,20 +27,25 @@ unsigned StringToTokensWS(const std::string& input, std::vector<std::string>& to
 {
 	std::string line;
 	
-	while (ReadLine(line))
+	//while (ReadLine(line))
 	{
-		std::istringstream instream(line);
-		std::string intermediate;
+		std::istringstream instream(input);
 
-		while (std::getline(instream, intermediate, ' '))
+		while (instream)
 		{
+			std::string intermediate;
+			instream >> intermediate;
 			tokens.push_back(intermediate);
-		}
-		for (int i = 0; i < tokens.size(); i++)
-		{
-			std::cout << tokens[i] << "\n";
-			std::cout << tokens.size(); 
 		}
 	}
 	return 0;
+}
+
+void AnalyseTokens(const std::vector<std::string>& tokens)
+{
+	for (int i = 0; i < tokens.size(); i++)
+	{
+		std::cout << i << "\n";	
+		std::cout << tokens[i] << "\n";
+	} 
 }

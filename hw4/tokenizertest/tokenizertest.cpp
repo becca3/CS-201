@@ -24,7 +24,7 @@ int main(int argc, char** argv)
 	{
 		std::string line;
 		std::cout << "Enter a sentence: ";
-		std::getline(std::cin, line);
+		ReadLine(line);
 		std::cout << "Your sentence is: " << line << "\n";
 
 		if (line == "End" || line == "end" || line == "END")
@@ -35,33 +35,11 @@ int main(int argc, char** argv)
 		}
 		else
 		{
-			tokens.push_back(line);
-			ReadLine(line);
+			//tokens.push_back(line);
 			StringToTokensWS(line, tokens);
+			AnalyseTokens(tokens);
 		}
 	}
-
-	//AnalyseTokens(tokens);
-	//return 0;
-
-
-	//ReadLine(line);
-	//std::cout << "\n";
-
-	//std::string input; std::vector<std::string> tokens;
-	//
-	//std::string sentence;
-	//std::cout << "...	: ";
-	//std::getline(std::cin, sentence);
-	//std::istringstream iss(sentence);
-	//tokens.push_back(sentence);
-	//std::copy(std::istream_iterator<std::string>(iss),
-	//	std::istream_iterator<std::string>(),
-	//	std::ostream_iterator<std::string>(std::cout, "\n"));
-
-	//StringToTokensWS(line, tokens);
-	//std::cout << "\n";
-
 	//return 0;
 	//
 }
