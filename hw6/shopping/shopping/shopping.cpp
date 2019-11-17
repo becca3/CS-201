@@ -4,6 +4,7 @@
 #include<vector>
 #include<iomanip>
 #include<algorithm>
+#include<utility>
 
 //Struct to store variables
 struct Record
@@ -51,6 +52,22 @@ void addItem(std::string input)
 	}
 }
 
+void removeItem(std::string input)
+{
+	if (products.count(input))
+	{
+		auto it = std::find(cart.begin(), cart.end(), input);
+		if (it != cart.end())
+		{
+			cart.erase(it);
+		}
+		for (auto i : cart)
+		{
+			std::cout << i << ", ";
+		}
+	}
+}
+
 void printMap(std::map<std::string, Record> const & products)
 {
 	for (const auto& p : products)
@@ -64,16 +81,12 @@ void printMap(std::map<std::string, Record> const & products)
 
 int main(int argc, char** argv)
 {
-	printMap(products);
-
 	while (true)
 	{
 		std::string input;
 
-		std::cout << "Choose an item you want to add to your cart: \n";
+		std::cout << "Welcome! Would you like to add or remove items? (Type 'add' or 'remove') \n";
 		std::getline(std::cin, input);
-		std::cout << "\n";
-
 		if (input == "end" || input == "End" || input == "END")
 		{
 			std::cout << "Session ended!" << std::endl;
@@ -81,11 +94,25 @@ int main(int argc, char** argv)
 		}
 		else
 		{
-			addItem(input);
-			std::cout << "\n";
+			if (input == "add")
+			{
 
+				printMap(products);
+				std::cout << "Choose an item you want to add to your cart: \n";
+				std::getline(std::cin, input);
+				std::cout << "\n";
+				addItem(input);
+				std::cout << "\n";
+			}
+			else
+			{
+				std::cout << "Which item would you like to remove?: \n";
+				std::getline(std::cin, input);
+				std::cout << "\n";
+				removeItem(input);
+				std::cout << "\n";
+			}
 		}
 	}
-
 	return 0;
 }
