@@ -35,17 +35,19 @@ std::vector<std::string> cart;
 
 void addItem(std::string input)
 {
-	if (input != "end" || input != "End" || input != "END")
+	if (products.count(input))
 	{
-		if (products.count(input))
+		cart.push_back(input);
+		std::cout << "Added to cart." << std::endl;
+
+		for (auto i : cart) 
 		{
-			cart.push_back(input);
-			std::cout << "Added to cart." << std::endl;
+			std::cout << i << ", "; 
 		}
-		else
-		{
-			std::cout << "Item not available." << std::endl;
-		}	 
+	}
+	else
+	{
+		std::cout << "Item not available." << std::endl;
 	}
 }
 
@@ -64,12 +66,25 @@ int main(int argc, char** argv)
 {
 	printMap(products);
 
-	std::string input;
-	while ()
+	while (true)
 	{
+		std::string input;
+
 		std::cout << "Choose an item you want to add to your cart: \n";
-		std::cin >> input;
-		addItem(input);
+		std::getline(std::cin, input);
+		std::cout << "\n";
+
+		if (input == "end" || input == "End" || input == "END")
+		{
+			std::cout << "Session ended!" << std::endl;
+			break;
+		}
+		else
+		{
+			addItem(input);
+			std::cout << "\n";
+
+		}
 	}
 
 	return 0;
