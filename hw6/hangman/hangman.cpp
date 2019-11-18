@@ -3,14 +3,16 @@
 #include <algorithm>
 #include <map>
 #include <vector>
+#include<iterator>
 
 std::string guess;
 std::map<int, std::string> guesses;
+std::vector<std::string> guesses_vec;
 std::vector<std::string> words{ "d", "i", "n", "o", "s", "a", "u", "r" };
-//std::string word = "dinosaur";
 int life = 0;
 
 void printGuess(std::vector<std::string> words);
+void findLetter(std::string guess);
 
 int main(int argc, char** argv)
 {
@@ -20,7 +22,9 @@ int main(int argc, char** argv)
 		std::getline(std::cin, guess);
 		life++;
 		guesses.insert(std::pair<int, std::string>(life, guess));
+		guesses_vec.push_back(guess); //Stores guesses in a vector so a comparison search can be run.
 
+		//Outputs letters guessed so far and lives used.
 		std::cout << "Guesses so far: \n";
 		std::map<int, std::string>::iterator it = guesses.begin();
 		for (it = guesses.begin(); it != guesses.end(); ++it)
@@ -36,6 +40,7 @@ int main(int argc, char** argv)
 		}
 		else
 		{
+			findLetter(guess);
 			//printGuess(words);
 		}
 	}
@@ -53,8 +58,16 @@ void printGuess(std::vector<std::string> words)
 	std::cout << std::endl;
 }
 
-void findLetter()
+void findLetter(std::string guess)
 {
+	auto result1 = std::find(std::begin(words), std::end(words), guess);
 
-	std::vector<int>::iterator it;
+	if (result1 != std::end(words)) 
+	{
+		std::cout << "Word contains: " << guess << '\n';
+	}
+	else 
+	{
+		std::cout << "Word does not contain: " << guess << '\n';
+	}
 }
