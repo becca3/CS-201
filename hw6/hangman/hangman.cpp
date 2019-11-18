@@ -24,17 +24,19 @@ int main(int argc, char** argv)
 		std::cout << "Guesses so far: \n";
 		std::map<int, std::string>::iterator it = guesses.begin();
 		for (it = guesses.begin(); it != guesses.end(); ++it)
-			std::cout << it->first << " - " << it->second << '\n';
+			std::cout << "Lives used: " << it->first << " - " << "Letters guessed: " << it->second << '\n';
 
 		if (life == 10)
 		{
 			std::cout << "\n";
 			std::cout << "You died!" << std::endl;
+			std::cout << "Word was... " << std::endl;
+			printGuess(words);
 			break;
 		}
 		else
 		{
-			printGuess(words);
+			//printGuess(words);
 		}
 	}
 	return 0;
