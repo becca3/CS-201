@@ -3,26 +3,30 @@
 #include <algorithm>
 #include <map>
 #include <vector>
-#include<iterator>
+#include <iterator>
 
-std::string guess;
-std::map<int, std::string> guesses;
-std::vector<std::string> guesses_vec;
-std::vector<std::string> words{ "d", "i", "n", "o", "s", "a", "u", "r" };
-int life = 0;
+std::string guess; //Stores user input.
+std::map<int, std::string> guesses; //Store users guesses and lives remaining. 
+std::vector<std::string> guesses_vec{"_", "_", "_", "_", "_", "_", "_", "_"}; //Stores the blank word.
+std::vector<std::string> words{ "d", "i", "n", "o", "s", "a", "u", "r" }; //Stores the actual word.
+int life = 0; //Stores number of chances left.
 
+//Function definitions.
 void printGuess(std::vector<std::string> words);
-void findLetter(std::string guess);
+bool findLetter(std::string guess);
+void printEmpty(std::vector<std::string> guesses_vec);
 
+//Main.
 int main(int argc, char** argv)
 {
-	while (life <= 10)
+	while (life <= 10) //Asks for user input.
 	{
 		std::cout << "Guess a letter: " << "\n";
 		std::getline(std::cin, guess);
 		life++;
 		guesses.insert(std::pair<int, std::string>(life, guess));
-		guesses_vec.push_back(guess); //Stores guesses in a vector so a comparison search can be run.
+		//guesses_vec.push_back(guess);
+		printEmpty(guesses_vec);
 
 		//Outputs letters guessed so far and lives used.
 		std::cout << "Guesses so far: \n";
@@ -41,7 +45,6 @@ int main(int argc, char** argv)
 		else
 		{
 			findLetter(guess);
-			//printGuess(words);
 		}
 	}
 	return 0;
@@ -58,16 +61,37 @@ void printGuess(std::vector<std::string> words)
 	std::cout << std::endl;
 }
 
-void findLetter(std::string guess)
+//Functions.
+void printEmpty(std::vector<std::string> guesses_vec)
+{
+	// Lambda expression to print vector containing the word.
+	for_each(guesses_vec.begin(), guesses_vec.end(), [](std::string i)
+		{
+			std::cout << i << " ";
+		});
+	std::cout << std::endl;
+}
+
+bool findLetter(std::string guess)
 {
 	auto result1 = std::find(std::begin(words), std::end(words), guess);
 
 	if (result1 != std::end(words)) 
 	{
 		std::cout << "Word contains: " << guess << '\n';
+		return true;
 	}
 	else 
 	{
 		std::cout << "Word does not contain: " << guess << '\n';
+		return false;
 	}
 }
+
+//void replace()
+//{
+//	if ()
+//	{
+//
+//	}
+//}
