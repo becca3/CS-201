@@ -36,7 +36,7 @@ int main(int argc, char** argv)
 
 	printInventory(inventory);
 
-	std::cout << "You can 'browse', 'buy', 'remove item' or 'leave'.\n";
+	std::cout << "You can 'browse', 'buy', 'remove item', 'see cart' or 'leave'.\n";
 
 	while (true)
 	{
