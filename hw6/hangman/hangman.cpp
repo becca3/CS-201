@@ -7,7 +7,6 @@
 
 std::string guess; //Stores user input.
 std::map<int, std::string> guesses; //Store users guesses and lives remaining. 
-//std::vector<std::string> blank{"_", "_", "_", "_", "_", "_", "_", "_"}; //Stores the blank word.
 std::vector<std::string> words{ "d", "i", "n", "o", "s", "a", "u", "r" }; //Stores the actual word.
 int life = 0; //Stores number of chances left.
 std::string correctWord = "";
@@ -32,8 +31,6 @@ int main(int argc, char** argv)
 			correctWord.append(guess);
 			std::cout << "Word so far: " << correctWord << "\n";
 		}
-		//blank.push_back(guess);
-		//printEmpty(blank);
 
 		//Outputs letters guessed so far and lives used.
 		std::cout << "Guesses so far: \n";
@@ -95,24 +92,3 @@ bool findLetter(std::string guess)
 		return false;
 	}
 }
-
-
-//Functions.
-//void printEmpty(std::vector<std::string> blank)
-//{
-//	// Lambda expression to print vector containing the word.
-//	for_each(blank.begin(), blank.end(), [](std::string i)
-//		{
-//			std::cout << i << " ";
-//		});
-//	std::cout << std::endl;
-//}
-
-
-//void replace(std::string guess)
-//{
-//	if (findLetter)
-//	{
-//		blank.push_back(guess);
-//	}
-//}
