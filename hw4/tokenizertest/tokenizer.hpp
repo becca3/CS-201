@@ -24,6 +24,3 @@ void Whitespace(std::string& token, std::string& potType,
 	bool& res, const size_t& longest_length);
 int Type(std::string& token, std::string& potType, bool& res, 
 	const size_t& longest_length, std::vector<char>& v);
-
-
-//unsigned StringToTokenWS(std::vector<std::string>& tokens);
