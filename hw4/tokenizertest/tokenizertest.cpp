@@ -1,7 +1,7 @@
 /*
 Program: tokenizertest.cpp
 Author: Rebecca Morgan
-Date: 13 October 2019
+Date: 18 November 2019
 Description: Identifying tokens for CS-201
 */
 
@@ -35,11 +35,8 @@ int main(int argc, char** argv)
 		}
 		else
 		{
-			//tokens.push_back(line);
 			StringToTokensWS(line, tokens);
-			AnalyseTokens(tokens);
+			AnalyzeTokens(tokens);
 		}
 	}
-	//return 0;
-	//
 }
