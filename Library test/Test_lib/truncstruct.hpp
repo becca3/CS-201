@@ -46,4 +46,7 @@ StringInfo trunc(const StringInfo & stringInfo);
 StringInfo trunc8(const std::string & str);
 
 
+// Truncate a user-provided arbitrary number of characters from a string
+void truncArbitrary(Fl_Widget* obj, void*);
+
 #endif //#ifndef FILE_TRUNCSTRUCT_HPP_INCLUDED

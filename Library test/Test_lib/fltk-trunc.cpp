@@ -2,19 +2,27 @@
 Program: fltk-trunc.cpp
 Author: Rebecca Morgan
 Date: 01 November 2019
-Description: fltk Trauncate program for CS-201
+Description: fltk Truncate program for CS-201
 */
 
-#include<FL/Fl.h>
-#include<FL/Fl_Box.h>
-#include<FL/Fl_Window.h>
-#include<FL/Fl_Input.h>
-#include<FL/Fl_Output.h>
-#include<FL/Fl_Button.h>
-#include<FL/Fl_Return_Button.h>
+#include<FL/Fl.H>
+#include<FL/Fl_Box.H>
+#include<FL/Fl_Window.H>
+#include<FL/Fl_Input.H>
+#include<FL/Fl_Output.H>
+#include<FL/Fl_Button.H>
+#include<FL/Fl_Return_Button.H>
+
 #include "truncstruct.hpp"
 #include <string>
 #include <iostream>
+
+int main(int argc, char** argv)
+{
+	#Fl_Window* window = CreateWindow();
+	window->show(argc, argv);
+	return Fl::run();
+}
 
 
 struct Screen
@@ -39,7 +47,7 @@ void Quit(Fl_Widget* w, void* userdata);
 Fl_Window* CreateWindow();
 
 
- void InputChanged(Fl_Widget* w, void* userdata)
+void InputChanged(Fl_Widget* w, void* userdata)
 {
 	if (!view.input) return;
 	screen.input = view.input->value();
@@ -60,14 +68,14 @@ void buttonPressed(Fl_Widget* w, void* data)
 	{
 		view.output->value(trunc(foo).str.c_str());
 	}
-	
+
 }
 
 void Quit(Fl_Widget* w, void* userdata)
 {
 	if (!userdata) return;
 
-	Fl_Window* window = (Fl_Window*) userdata;
+	Fl_Window* window = (Fl_Window*)userdata;
 
 	window->hide();
 }
@@ -77,11 +85,11 @@ Fl_Window* CreateWindow()
 {
 	Fl_Window* window = new Fl_Window(550, 450, "Truncate Words Program");
 	Fl_Box* instructions = new Fl_Box(-10, -75, 200, 200, "Instructions: \n");
-	instructions -> labelsize(20);
-	instructions -> labelfont(FL_BOLD);
+	instructions->labelsize(20);
+	instructions->labelfont(FL_BOLD);
 
-	Fl_Box* words = new Fl_Box (30, -50, 200, 200, "Type a sentence and a number. \n");
-	Fl_Box* more_words = new Fl_Box (172, -30, 200, 200, "The program will print your sentence with the number of characters you input. \n");
+	Fl_Box* words = new Fl_Box(30, -50, 200, 200, "Type a sentence and a number. \n");
+	Fl_Box* more_words = new Fl_Box(172, -30, 200, 200, "The program will print your sentence with the number of characters you input. \n");
 
 	const int x = 100;
 	int y = 120;
@@ -101,22 +109,12 @@ Fl_Window* CreateWindow()
 	Fl_Button* quitBtn = new Fl_Button(x, 260, w, h, "Quit");
 
 	// Callbacks
-	view.input->callback(InputChanged, nullptr);
-	Return->callback(buttonPressed, nullptr);
-	quitBtn->callback(Quit, (void*) window);
+	//view.input->callback(InputChanged, nullptr);
+	//Return->callback(buttonPressed, nullptr);
+	truncArbitrary(Fl_Widget * obj, void*);
+	quitBtn->callback(Quit, (void*)window);
 
 
 	window->end();
 	return window;
 }
-
-
-int main(int argc, char** argv)
-{
-	Fl_Window* window = CreateWindow();
-	window->show(argc, argv);
-	return Fl::run();
-}
-
-
-StringInfo trunc(const StringInfo& strInfo);
