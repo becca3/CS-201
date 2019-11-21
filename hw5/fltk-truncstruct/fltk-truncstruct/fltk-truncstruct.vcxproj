@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>16.0</VCProjectVersion>
-    <ProjectGuid>{3C4D0052-8EE9-44DC-B330-82F5009CF4C5}</ProjectGuid>
-    <RootNamespace>asciiart</RootNamespace>
+    <ProjectGuid>{DBAD3C16-AF2C-4E7C-9974-32349A1AE009}</ProjectGuid>
+    <RootNamespace>fltktruncstruct</RootNamespace>
     <WindowsTargetPlatformVersion>10.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,14 +123,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="asciiart.cpp" />
-    <ClCompile Include="Color3.cpp" />
-    <ClCompile Include="Image3.cpp" />
+    <ClCompile Include="fltk-truncstruct.cpp" />
+    <ClCompile Include="trkstr.cpp" />
+    <ClCompile Include="truncstruct.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="asciiart.h" />
-    <ClInclude Include="Color3.hpp" />
-    <ClInclude Include="Image3.hpp" />
+    <ClInclude Include="trkstr.h" />
+    <ClInclude Include="truncstruct.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
