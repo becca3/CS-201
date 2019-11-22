@@ -1,3 +1,10 @@
+/*
+Program: rule30.cpp
+Author: Rebecca Morgan
+Date: 11/21/2019
+Description: Rule30 program for CS-201
+*/
+
 # include <iostream>
 # include <ctime>
 # include <stdlib.h>
@@ -5,6 +12,7 @@
 
 int main()
 {
+	//Variables
 	int a;
 	int b;
 	int c;
@@ -12,6 +20,7 @@ int main()
 	char* x;
 	char* x_old;
 
+	//Intro
 	std::cout << "\n";
 	std::cout << "CELLULAR AUTOMATON:\n";
 
