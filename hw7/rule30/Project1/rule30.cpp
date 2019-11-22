@@ -55,5 +55,14 @@ int main()
 		}
 	}
 
+	a[0] = a[z];
+	a[z + 1] = a[1];
+
+	for (x = 1; x <= z; x++)
+	{
+		std::cout << a[x];
+	}
+	std::cout << "\n";
+
 	return 0;
 }
