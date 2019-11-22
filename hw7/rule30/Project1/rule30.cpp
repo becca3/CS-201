@@ -2,8 +2,6 @@
 # include <ctime>
 # include <stdlib.h>
 
-using namespace std;
-
 
 int main()
 {
@@ -14,8 +12,8 @@ int main()
 	char* x;
 	char* x_old;
 
-	cout << "\n";
-	cout << "CELLULAR AUTOMATON:\n";
+	std::cout << "\n";
+	std::cout << "CELLULAR AUTOMATON:\n";
 
 	c = 80;
 	step_num = 80;
@@ -31,9 +29,9 @@ int main()
 
 	for (a = 1; a <= c; a++)
 	{
-		cout << x[a];
+		std::cout << x[a];
 	}
-	cout << "\n";
+	std::cout << "\n";
 
 	for (b = 1; b <= step_num; b++)
 	{
@@ -60,11 +58,11 @@ int main()
 		x[0] = x[c];
 		x[c + 1] = x[1];
 
-		/*for (a = 1; a <= c; a++)
+		for (a = 1; a <= c; a++)
 		{
-			cout << x[a];
+			std::cout << x[a];
 		}
-		cout << "\n";*/
+		std::cout << "\n";
 	}
 
 	//Reset the pointers. 
@@ -72,7 +70,7 @@ int main()
 	delete[] x_old;
 
 
-	cout << "\n";
+	std::cout << "\n";
 
 	return 0;
 }
