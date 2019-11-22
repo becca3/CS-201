@@ -1,68 +1,154 @@
+//# include <iostream>
+//# include <ctime>
+//# include <stdlib.h>
+//
+//
+//int main()
+//{
+//	int x; 
+//	int y; 
+//	int z; 
+//	int step_num;
+//	char* a; 
+//	char* a_old;
+//
+//	std::cout << "\n";
+//	std::cout << "CELLULAR AUTOMATON:\n";
+//
+//	z = 80;
+//	step_num = 80;
+//
+//	a = new char[z + 2];
+//	a_old = new char[z + 2];
+//
+//	for (x = 0; x <= z + 1; x++)
+//	{
+//		a[x] = ' ';
+//	}
+//	a[40] = '*';
+//
+//	for (x = 1; x <= z; x++)
+//	{
+//		std::cout << a[x];
+//	}
+//	std::cout << "\n";
+//
+//	for (y = 1; y <= step_num; y++)
+//	{
+//		for (x = 0; x < z + 2; x++)
+//		{
+//			a_old[x] = a[x];
+//		}
+//		for (x = 1; x <= z; x++)
+//		{
+//			if ((a_old[x - 1] == ' ' && a_old[x] == ' ' && a_old[x + 1] == '*') ||
+//				(a_old[x - 1] == ' ' && a_old[x] == '*' && a_old[x + 1] == ' ') ||
+//				(a_old[x - 1] == ' ' && a_old[x] == '*' && a_old[x + 1] == '*') ||
+//				(a_old[x - 1] == '*' && a_old[x] == ' ' && a_old[x + 1] == ' '))
+//			{
+//				a[x] = '*';
+//			}
+//			else
+//			{
+//				a[x] = ' ';
+//			}
+//		}
+//	}
+//
+//	a[0] = a[z];
+//	a[z + 1] = a[1];
+//
+//	for (x = 1; x <= z; x++)
+//	{
+//		std::cout << a[x];
+//	}
+//	std::cout << "\n";
+//
+//	//Reset the pointers 
+//	delete[] a; 
+//	delete[] a_old;
+//
+//
+//	std::cout << "\n";
+//	std::cout << "CELLULAR AUTOMATON\n";
+//	return 0;
+//}
+
 # include <iostream>
 # include <ctime>
 # include <stdlib.h>
 
+using namespace std;
+
 
 int main()
 {
-	int x; //i
-	int y; //j 
-	int z; //n
+	int a;
+	int b;
+	int c;
 	int step_num;
-	char* a; //x
-	char* a_old;
+	char* x;
+	char* x_old;
 
-	std::cout << "\n";
-	std::cout << "CELLULAR AUTOMATON:\n";
+	cout << "\n";
+	cout << "CELLULAR AUTOMATON:\n";
 
-	z = 80;
+	c = 80;
 	step_num = 80;
 
-	a = new char[z + 2];
-	a_old = new char[z + 2];
+	x = new char[c + 2];
+	x_old = new char[c + 2];
 
-	for (x = 0; x <= z + 1; x++)
+	for (a = 0; a <= c + 1; a++)
 	{
-		a[x] = ' ';
+		x[a] = ' ';
 	}
-	a[40] = '*';
+	x[40] = '*';
 
-	for (x = 1; x <= z; x++)
+	for (a = 1; a <= c; a++)
 	{
-		std::cout << a[x];
+		cout << x[a];
 	}
-	std::cout << "\n";
+	cout << "\n";
 
-	for (y = 1; y <= step_num; y++)
+	for (b = 1; b <= step_num; b++)
 	{
-		for (x = 0; x < z + 2; x++)
+		for (a = 0; a < c + 2; a++)
 		{
-			a_old[x] = a[x];
+			x_old[a] = x[a];
 		}
-		for (x = 1; x <= z; x++)
+		for (a = 1; a <= c; a++)
 		{
-			if ((a_old[x - 1] == ' ' && a_old[x] == ' ' && a_old[x + 1] == '*') ||
-				(a_old[x - 1] == ' ' && a_old[x] == '*' && a_old[x + 1] == ' ') ||
-				(a_old[x - 1] == ' ' && a_old[x] == '*' && a_old[x + 1] == '*') ||
-				(a_old[x - 1] == '*' && a_old[x] == ' ' && a_old[x + 1] == ' '))
+			if ((x_old[a - 1] == ' ' && x_old[a] == ' ' && x_old[a + 1] == '*') ||
+				(x_old[a - 1] == ' ' && x_old[a] == '*' && x_old[a + 1] == ' ') ||
+				(x_old[a - 1] == ' ' && x_old[a] == '*' && x_old[a + 1] == '*') ||
+				(x_old[a - 1] == '*' && x_old[a] == ' ' && x_old[a + 1] == ' '))
 			{
-				a[x] = '*';
+				x[a] = '*';
 			}
 			else
 			{
-				a[x] = ' ';
+				x[a] = ' ';
 			}
 		}
+
+
+		/*x[0] = x[c];
+		x[c + 1] = x[1];
+
+		for (a = 1; a <= c; a++)
+		{
+			cout << x[a];
+		}
+		cout << "\n";*/
 	}
 
-	a[0] = a[z];
-	a[z + 1] = a[1];
+	//Reset the pointers. 
+	delete[] x;
+	delete[] x_old;
 
-	for (x = 1; x <= z; x++)
-	{
-		std::cout << a[x];
-	}
-	std::cout << "\n";
+
+	cout << "\n";
 
 	return 0;
 }
