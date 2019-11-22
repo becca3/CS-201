@@ -21,5 +21,17 @@ int main()
 	a = new char[z + 2];
 	a_old = new char[z + 2];
 
+	for (x = 0; x <= z + 1; x++)
+	{
+		a[x] = ' ';
+	}
+	a[40] = '*';
+
+	for (x = 1; x <= z; x++)
+	{
+		std::cout << a[x];
+	}
+	std::cout << "\n";
+
 	return 0;
 }
