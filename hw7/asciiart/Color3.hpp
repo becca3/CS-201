@@ -2,14 +2,13 @@
 // Interface for Color3 class
 // Original Author: Jonathan Metzgar
 // CS 201 course
-
 #ifndef COLOR3_HPP
 #define COLOR3_HPP
 
 #include <iostream>
 
-class Color3 
-{  
+class Color3
+{
 public:
 	Color3();
 	Color3(int R, int G, int B);

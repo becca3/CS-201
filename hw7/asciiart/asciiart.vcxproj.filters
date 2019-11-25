@@ -26,9 +26,6 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="asciiart.h">
-      <Filter>Source Files</Filter>
-    </ClInclude>
     <ClInclude Include="Color3.hpp">
       <Filter>Source Files</Filter>
     </ClInclude>
