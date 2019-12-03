@@ -18,6 +18,9 @@
     <ClCompile Include="bulls-and-cows.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="main.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bulls-and-cows.h">
