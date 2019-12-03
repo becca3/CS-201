@@ -1,3 +1,10 @@
+/**
+Program: bulls-and-cows.h
+Author: Rebecca Morgan
+Date: 02 December 2019
+Description: fltk bulls and cows game for CS-201
+*/
+
 #pragma comment (lib, "fltk.lib")
 #pragma comment (lib, "comctl32.lib")
 
