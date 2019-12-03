@@ -35,7 +35,7 @@ void initVectors(vector<int>& nums, vector<int>& guess)
 	default_random_engine engine(rDevice());
 	uniform_int_distribution<int> uniform_dist(0, 9);
 
-	//Gives each int a spot in the vector.
+	//Gives each number a spot in the vector.
 	int randomInt;
 	for (int i = 0; i < 4; i++)
 	{
@@ -44,14 +44,13 @@ void initVectors(vector<int>& nums, vector<int>& guess)
 		guess.push_back(0);
 	}
 
-	////This is to make sure that the two vectors are not
-	////identical by random chance
-	//while (compareDigits(nums, guess) == 4)
-	//{
-	//	for (int i = 0; i < 4; i++)
-	//	{
-	//		randomInt = uniform_dist(engine);
-	//		nums[i] = randomInt;
-	//	}
-	//}
+	//Checks if two vectors are the same.
+	while (compareDigits(nums, guess) == 4)
+	{
+		for (int i = 0; i < 4; i++)
+		{
+			randomInt = uniform_dist(engine);
+			nums[i] = randomInt;
+		}
+	}
 }
