@@ -11,12 +11,8 @@
 #include <FL/Fl_Output.H>
 #include <FL/Fl_ask.h>
 
-using std::vector;
-using std::string;
-using std::istringstream;
-
-vector<int> nums;
-vector<int> guess;
+std::vector<int> nums;
+std::vector<int> guess;
 int common;
 
 Fl_Input* input;
@@ -36,8 +32,8 @@ be evaluated.
 */
 void guess_callback(Fl_Widget* widget)
 {
-	string str = input->value();
-	istringstream istream(str);
+	std::string str = input->value();
+	std::istringstream istream(str);
 	int num;
 
 	istream >> num;
@@ -59,7 +55,7 @@ void guess_callback(Fl_Widget* widget)
 				num /= 10;
 			}
 
-			string out = "4 Cows";
+			std::string out = "4 Cows";
 
 			switch (compareDigits(nums, guess))
 			{
