@@ -1,6 +1,5 @@
-#include<iostream>	
+#include "environment.h"
+#include "agent.h"
+#include "simulator.h"
 
-int main(int argc, char** argv)
-{
-	return 0;
-}
+#include <iostream>
