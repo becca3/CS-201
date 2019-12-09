@@ -4,17 +4,13 @@
 #include <iostream>
 #include <iomanip>
 
-using std::cout;
-using std::cin;
-using std::endl;
-
 class Environment;
 
-class Agent {
+class Agent
+{
 
 private:
 
-	// Member Variables
 	int _currRoom;
 	int _nextAction;
 	int _moveVal;
@@ -22,10 +18,8 @@ private:
 
 public:
 
-	// Constructor
 	Agent();
 
-	// Member Functions
 	void perceive(Environment& env);
 	void think();
 	void act(Environment& env);

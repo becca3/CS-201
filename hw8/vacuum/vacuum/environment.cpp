@@ -9,17 +9,13 @@
 #include "random.h"
 #include "agent.h"
 
-using std::vector;
-using std::cout;
-using std::cin;
-using std::endl;
-
 // Default constructor for Environment class
-Environment::Environment(mt19937& e1) {
+Environment::Environment(std::mt19937& e1)
+{
 	_e1 = nullptr;
 	_e1 = &e1;
 	for (int i = 0; i < 8; i++) {
-		bool val = rollBool(_e1);
+		bool val = randBool(_e1);
 		_rooms.push_back(val);
 	}
 };
@@ -33,7 +29,7 @@ void Environment::cleanRoom(int& roomIndex) {
 void Environment::iteration() {
 	for (int i = 0; i < 8; i++) {
 		if (_rooms[i] == false) {
-			_rooms[i] = rollBool(_e1);
+			_rooms[i] = randBool(_e1);
 		}
 	}
 }

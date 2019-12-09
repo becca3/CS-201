@@ -8,22 +8,16 @@
 #include <cmath> 
 #include <stdlib.h> 
 
-using std::vector;
-using std::cout;
-using std::cin;
-using std::endl;
-using std::mt19937;
-
-// Clear the console
-void clearConsole() {
-
-	// Clear the console
-	cout << "\033[2J\033[1;1H";
+// Clear console.
+void clearConsole() 
+{
+	std::cout << "\033[2J\033[1;1H";
 }
 
-// Wait for user response
-void waitForContinue() {
-	cout << endl << "Press enter to continue...";
+// Wait for user response.
+void waitForContinue()
+{
+	std::cout << std::endl << "Press enter to continue";
 	getchar();
 }
 
@@ -31,37 +25,41 @@ void waitForContinue() {
 void printState(Environment& env, Agent& agt) {
 
 	// Print room status
-	cout << "Current status of each room:" << endl;
-	for (int i = 0; i < 8; i++) {
-		cout << "Room " << i + 1 << ": ";
+	std::cout << "Current status: " << std::endl;
+	for (int i = 0; i < 8; i++) 
+	{
+		std::cout << "Room " << i + 1 << ": ";
 
 		bool val = env.getRoom(i);
 		if (val)
-			cout << "dirty" << endl;
+			std::cout << "Dirty" << std::endl;
 		else
-			cout << "clean" << endl;
+			std::cout << "Clean" << std::endl;
 	}
-	cout << endl;
+	std::cout << std::endl;
 
 	// Vacuum status
-	cout << "Vacuum status: " << endl;
+	std::cout << "Vacuum status: " << std::endl;
 
 	int currR = agt.getCurrRoom();
-	cout << "Room: " << currR + 1 << endl;
-	cout << "Action: ";
+	std::cout << "Room: " << currR + 1 << std::endl;
+	std::cout << "Action: ";
 
 	int act = agt.getAction();
-	if (act == 0) {
-		cout << "Clean";
+	if (act == 0)
+	{
+		std::cout << "Clean";
 	}
-	else {
-		cout << "Move";
+	else 
+	{
+		std::cout << "Move";
 	}
 
 }
 
 // Return a random value according to a normal distribution
-bool rollBool(mt19937* e1) {
+bool randBool(std::mt19937* e1) 
+{
 	// Declare endpoints of the range for the distributions 
 	int firs = 0;
 	int last = 16;
