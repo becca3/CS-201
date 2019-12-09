@@ -1,11 +1,11 @@
 #include "environment.h"
 #include "agent.h"
 #include "simulator.h"
-
 #include <iostream>
 #include <string>
 #include <stdexcept>
 
+//Takes input from user. 
 std::string getInput()
 {
 	std::string input = "";
@@ -13,7 +13,7 @@ std::string getInput()
 	return input;
 }
 
-
+//Checks temperature and adjusts if necessary. 
 int main()
 {
 	bool loop = true;

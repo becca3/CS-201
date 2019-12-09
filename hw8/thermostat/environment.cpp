@@ -1,28 +1,32 @@
 #include "environment.h"
-
 #include <iostream>
 
-Enviornment::Enviornment(int pInt)
+//Creates environment. 
+Environment::Environment(int pInt)
 {
 	current_temp = pInt;
 }
 
-int Enviornment::getTemp() const
+//Gets current temperature. 
+int Environment::getTemp() const
 {
 	return current_temp;
 }
 
-bool Enviornment::isHeaterOn() const
+//Checks if heater is on. 
+bool Environment::isHeaterOn() const
 {
 	return is_heater_on;
 }
 
-void Enviornment::setHeaterState(bool pBool)
+//Sets heater to on or off.
+void Environment::setHeaterState(bool pBool)
 {
 	is_heater_on = pBool;
 }
 
-void Enviornment::iteration()	
+//Changes temperature of heater. 
+void Environment::iteration()	
 {
 	std::cout << "Heater is ";
 	if (is_heater_on)

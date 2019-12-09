@@ -5,12 +5,12 @@ Agent::Agent(int pInt)
 	desired_temp = pInt;
 }
 
-int Agent::perceive(const Enviornment& pEnv)
+int Agent::perceive(const Environment& pEnv)
 {
 	return pEnv.getTemp();
 }
 
-bool Agent::think(const Enviornment& pEnv)
+bool Agent::think(const Environment& pEnv)
 {
 	int current_temp = perceive(pEnv);
 
@@ -25,7 +25,7 @@ void Agent::setDesiredTemp(int pInt)
 	desired_temp = pInt;
 }
 
-void Agent::act(Enviornment& pEnv)
+void Agent::act(Environment& pEnv)
 {
 	pEnv.setHeaterState(think(pEnv));
 }

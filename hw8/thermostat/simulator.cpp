@@ -1,39 +1,32 @@
 #include "simulator.h"
-
 #include <iostream>
-using std::cout;
-using std::endl;
-using std::cin;
-using std::getline;
-
 #include <string>
-using std::string;
-using std::stoi;
-
 #include <stdexcept>
 
-string Simulator::getInput()
+//Takes input from user. 
+std::string Simulator::getInput()
 {
-	string input = "";
-	getline(cin, input);
+	std::string input = "";
+	std::getline(std::cin, input);
 	return input;
 }
 
-void Simulator::askOwner(Agent& pAg, Enviornment& pEnv)
+//Cheaks input against desired temperature. 
+void Simulator::askOwner(Agent& pAg, Environment& pEnv)
 {
 	bool loop2 = true;
-	string input = "";
+	std::string input = "";
 	int intInput = 0;
 
 	while (loop2)
 	{
-		cout << "Enter a desired temperature, or enter \"QUIT\" to quit." << endl;
+		std::cout << "Enter a desired temperature, or enter \"QUIT\" to quit." << std::endl;
 		input = getInput();
 
 		try
 		{
 			intInput = stoi(input);
-			cout << "Desired temperature: " << intInput << endl;
+			std::cout << "Desired temperature: " << intInput << std::endl;
 			pAg.setDesiredTemp(intInput);
 			loop2 = false;
 		}
@@ -41,20 +34,21 @@ void Simulator::askOwner(Agent& pAg, Enviornment& pEnv)
 		{
 			if (input == "QUIT")
 			{
-				cout << "Quiting." << endl;
+				std::cout << "Quiting." << std::endl;
 				loop = false;
 				loop2 = false;
 			}
 			else
 			{
-				cout << "Invalid input. Try again." << endl;
+				std::cout << "Invalid input. Try again." << std::endl;
 				loop2 = true;
 			}
 		}
 	}
 }
 
-void Simulator::run(Agent& pAg, Enviornment& pEnv)
+
+void Simulator::run(Agent& pAg, Environment& pEnv)
 {
 	while (loop)
 	{

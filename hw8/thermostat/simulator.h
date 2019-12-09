@@ -1,15 +1,14 @@
 #include "agent.h"
 #include "environment.h"
-
 #include <string>
-using std::string;
 
+//Simulates the changing tempeature. 
 class Simulator
 {
 	bool loop = true;
 
 public:
-	string getInput();
-	void askOwner(Agent& pAg, Enviornment& pEnv);
-	void run(Agent& pAg, Enviornment& pEnv);
+	std::string getInput();
+	void askOwner(Agent& pAg, Environment& pEnv);
+	void run(Agent& pAg, Environment& pEnv);
 };

@@ -1,13 +1,12 @@
-
 #ifndef ENVIORNMENT_H
 #define ENVIORNMENT_H
 
-class Enviornment
+class Environment
 {
 	int current_temp;
 	bool is_heater_on = true;
 public:
-	Enviornment(int pInt);
+	Environment(int pInt);
 
 	//Returns current temperature.
 	int getTemp() const;
